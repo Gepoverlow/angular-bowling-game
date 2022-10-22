@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BowlingGameService } from './bowling-game.service';
+import { BowlingGameService } from '../shared/bowling-game.service';
 
 describe('BowlingGameService', () => {
   let service: BowlingGameService;

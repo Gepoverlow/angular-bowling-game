@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { BowlingGameReq } from './bowling-game-request';
-import { BowlingGameRes } from './bowling-game-response';
+import { BowlingGameReq } from '../bowling-game/bowling-game-request';
+import { BowlingGameRes } from '../bowling-game/bowling-game-response';
 import { Observable } from 'rxjs';
-import { PinsReq } from './pins-request';
+import { PinsReq } from '../bowling-game/pins-request';
 
 @Injectable({
   providedIn: 'root',
