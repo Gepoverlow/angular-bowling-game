@@ -1,3 +1,17 @@
 #calculator-item {
   margin: 8px;
 }
+
+#roll-ul {
+  padding: 0px;
+}
+
+#roll-ul > li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.roll-item {
+  border: 1px solid black;
+  padding: 3px;
+}

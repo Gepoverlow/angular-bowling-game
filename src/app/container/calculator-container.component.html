@@ -1,16 +1,13 @@
 <div id="main-container">
+  <button mat-button color="primary">
+    <span id="create-button" (click)="openCreateDialog()">NEW GAME</span>
+  </button>
   <div id="game-wrapper">
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
-    <app-calculator-item></app-calculator-item>
+    <app-calculator-item
+      [gameId]="gameId"
+      [name]="name"
+      [score]="score"
+      [rolls]="rolls"
+    ></app-calculator-item>
   </div>
 </div>

@@ -1,0 +1,21 @@
+<mat-toolbar id="dialog-header-roll">
+  <span>New Roll</span>
+  <span class="fill-remaining-space"></span>
+  <button
+    class="btn-dialog-close"
+    mat-stroked-button
+    (click)="onCancel()"
+    tabIndex="-1"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form #addForm="ngForm" (ngSubmit)="onConfirm(addForm)">
+  <mat-form-field>
+    <mat-label for="newRoll">Pins Rolled</mat-label>
+    <input matInput type="number" name="pins" ngModel id="Roll" required />
+  </mat-form-field>
+  <button [disabled]="addForm.invalid" type="submit" mat-button color="primary">
+    Confirm
+  </button>
+</form>

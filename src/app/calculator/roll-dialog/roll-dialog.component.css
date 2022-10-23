@@ -1,0 +1,10 @@
+.fill-remaining-space {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#dialog-header-roll {
+  margin-bottom: 1em;
+}
