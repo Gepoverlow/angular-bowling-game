@@ -4,10 +4,11 @@
   </button>
   <div id="game-wrapper">
     <app-calculator-item
-      [gameId]="gameId"
-      [name]="name"
-      [score]="score"
-      [rolls]="rolls"
+      *ngFor="let calculator of calculators"
+      [gameId]="calculator.gameId"
+      [name]="calculator.name"
+      [score]="calculator.score"
+      [rolls]="calculator.rolls"
     ></app-calculator-item>
   </div>
 </div>

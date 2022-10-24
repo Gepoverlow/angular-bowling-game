@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BowlingGameService } from '../shared/bowling-game.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { CalculatorModel } from "../calculator/calculator-model"
 
 @Component({
   selector: 'app-calculator-container',
@@ -10,22 +11,13 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 })
 export class CalculatorContainerComponent implements OnInit {
 
-  private _gameId !: string;
-  private _name !: string;
-  private _score !: number;
-  private _rolls !: number[];
+  private _calculators !: CalculatorModel[];
 
   constructor(private bowlingGameService: BowlingGameService, private dialog: MatDialog) {
-    this._rolls = [];
+    this._calculators = [];
   }
 
-  ngOnInit(): void {
-
-    this._name = "Default Game";
-    this._gameId = "Default ID";
-    this._score = 0;
-
-  }
+  ngOnInit(): void { }
 
   public openCreateDialog() {
 
@@ -39,10 +31,8 @@ export class CalculatorContainerComponent implements OnInit {
 
           next: (data) => {
 
-            this._gameId = data.gameId;
-            this._name = data.name;
-            this._score = data.score;
-            this._rolls = [];
+            let newBowlingCalculator = new CalculatorModel(data.gameId, data.name, data.score);
+            this._calculators.push(newBowlingCalculator);
 
           },
           error: (error) => {
@@ -57,36 +47,12 @@ export class CalculatorContainerComponent implements OnInit {
 
   }
 
-  public get gameId() {
-    return this._gameId;
+  public get calculators() {
+    return this._calculators;
   }
 
-  public set gameId(newGameId: string) {
-    this._gameId = newGameId;
-  }
-
-  public get name() {
-    return this._name;
-  }
-
-  public set name(newName: string) {
-    this._name = newName;
-  }
-
-  public get score() {
-    return this._score;
-  }
-
-  public set score(newScore: number) {
-    this._score = newScore;
-  }
-
-  public get rolls() {
-    return this._rolls;
-  }
-
-  public set rolls(newRolls: number[]) {
-    this._rolls = newRolls;
+  public set calculators(newCalculators: CalculatorModel[]) {
+    this._calculators = newCalculators;
   }
 
 }
