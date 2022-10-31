@@ -19,9 +19,10 @@ import { CalculatorContainerComponent } from './container/calculator-container.c
 import { CalculatorItemComponent } from './calculator/calculator-item.component';
 import { CreateDialogComponent } from './container/create-dialog/create-dialog.component';
 import { RollDialogComponent } from './calculator/roll-dialog/roll-dialog.component';
+import { UpdateNameDialogComponent } from './calculator/update-name-dialog/update-name-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CalculatorContainerComponent, CalculatorItemComponent, CreateDialogComponent, RollDialogComponent],
+  declarations: [AppComponent, HeaderComponent, CalculatorContainerComponent, CalculatorItemComponent, CreateDialogComponent, RollDialogComponent, UpdateNameDialogComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatCardModule, MatButtonModule, MatDialogModule, MatIconModule, MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent],

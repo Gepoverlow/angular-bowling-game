@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BowlingGameService } from '../shared/bowling-game.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateDialogComponent } from './create-dialog/create-dialog.component';
@@ -9,15 +9,13 @@ import { CalculatorModel } from "../calculator/calculator-model"
   templateUrl: './calculator-container.component.html',
   styleUrls: ['./calculator-container.component.css']
 })
-export class CalculatorContainerComponent implements OnInit {
+export class CalculatorContainerComponent {
 
   private _calculators !: CalculatorModel[];
 
   constructor(private bowlingGameService: BowlingGameService, private dialog: MatDialog) {
     this._calculators = [];
   }
-
-  ngOnInit(): void { }
 
   public openCreateDialog() {
 

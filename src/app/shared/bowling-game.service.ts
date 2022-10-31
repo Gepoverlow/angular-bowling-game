@@ -21,9 +21,15 @@ export class BowlingGameService {
 
   }
 
-  public performBowlingRoll(pinsReq: PinsReq, gameId: string): Observable<BowlingGameRes> {
+  public performBowlingRoll(pinsReq: PinsReq, gameId?: string): Observable<BowlingGameRes> {
 
     return this.http.post<BowlingGameRes>(`${this.apiUrl}/bowling/${gameId}`, pinsReq);
+
+  }
+
+  public upDateBowlingGame(bowlingGameReq: BowlingGameReq, gameId?: string): Observable<BowlingGameRes> {
+
+    return this.http.put<BowlingGameRes>(`${this.apiUrl}/bowling/${gameId}`, bowlingGameReq)
 
   }
 
